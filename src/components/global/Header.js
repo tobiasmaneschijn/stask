@@ -17,9 +17,9 @@ import {
   Collapse,
 } from "shards-react";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
-const HeaderComponent = ({ currentPage }) => {
+const HeaderComponent = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [collapseOpen, setCollapseOpen] = useState(false);
 

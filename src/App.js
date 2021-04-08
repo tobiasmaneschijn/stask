@@ -1,3 +1,5 @@
+import React from 'react';
+
 import './App.css';
 import HeaderComponent from './components/global/Header';
 import "bootstrap/dist/css/bootstrap.min.css";
