@@ -5,6 +5,7 @@
 		}
 	],
 	"settings": {
-		"license.author": "Tobias Nyholm Maneschijn"
+		"license.author": "Tobias Nyholm Maneschijn",
+		"license.year": "2021"
 	}
 }
