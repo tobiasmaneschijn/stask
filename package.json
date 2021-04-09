@@ -7,6 +7,7 @@
     "@testing-library/react": "^11.2.6",
     "@testing-library/user-event": "^12.8.3",
     "emoji": "^0.3.2",
+    "firebase": "^8.3.3",
     "jshint": "^2.12.0",
     "jslint": "^0.12.1",
     "prop-types": "^15.7.2",
