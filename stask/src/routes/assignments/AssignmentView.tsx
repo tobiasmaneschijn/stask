@@ -3,26 +3,21 @@ import firebase from "firebase";
 import {
   Box,
   Button,
-  Footer,
   Header,
   Heading,
   Main,
-  Markdown,
-  Paragraph,
   Text,
   TextInput,
 } from "grommet";
 import Datetime from "react-datetime";
 import React, { ReactElement, useState } from "react";
 import { useDocument } from "react-firebase-hooks/firestore";
-import ReactMarkdown from "react-markdown";
-import { useParams } from "react-router-dom";
-import remarkGfm, { Gfm } from "remark-gfm";
+import { Link, useParams } from "react-router-dom";
 import service from "../../shared/services/firestore.service";
 import MDEditor from "@uiw/react-md-editor";
 import UserDataService from "../../shared/services/firestore.service";
 import moment, { Moment } from "moment";
-
+import {ReactTinyLink} from 'react-tiny-link'
 interface Props {
   documentId: string;
 }
@@ -50,8 +45,8 @@ export default function AssignmentView({}: Props): ReactElement {
   return (
     <div>
       <Box flex>
-        <Header background="brand" height="10vh">
-          {assignment.course}
+        <Header background="brand"  justify="center" align="center" height="10vh">
+          <Text>{assignment.course}</Text>
           <Box direction="row" gap="1em">
             <Text> Due: </Text>
 
@@ -93,6 +88,17 @@ export default function AssignmentView({}: Props): ReactElement {
               <Heading>{assignment.title}</Heading>
               <Box fill>
                 <MDEditor.Markdown source={assignment.description} />
+                
+                 <Box elevation="2">
+                   { assignment.links.map( link => (
+                   
+                   <ReactTinyLink   cardSize="small"
+                   showGraphic={true}
+                   maxLine={2}
+                   minLine={1}
+                   url={link}> </ReactTinyLink>
+                   ))}
+                 </Box>
               </Box>
             </Box>
           )}
